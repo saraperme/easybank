@@ -1,0 +1,409 @@
+
+/* general */
+
+:root{
+    --dark-blue: hsl(233, 26%, 24%);
+    --lime-green: hsl(136, 65%, 51%);
+    --bright-cyan: hsl(192, 70%, 51%);
+    --grayish-blue: hsl(233, 8%, 62%);
+    --light-grayish-blue: hsl(220, 16%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+
+    --main-padding:1rem 10rem;
+    --1150-padding:1rem 6rem;
+    --650-padding:0 4rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Public Sans', sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+body, html{
+    overflow-x: hidden;
+}
+
+
+/* typography */
+
+p{
+    color: var(--grayish-blue);
+    line-height: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+    color: var(--grayish-blue);
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--dark-blue);
+}
+
+h2{
+    font-size: 2.3rem;
+    font-weight: 400;
+    color: var(--dark-blue);
+}
+
+h5{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--dark-blue);
+}
+
+.articles h2{
+    text-transform: capitalize;
+}
+
+.author{
+    font-size: .7rem;
+}
+
+.content{
+    font-size: .9rem;
+    line-height: 1.2rem;
+}
+
+.title{
+    font-size: 1.2rem;
+}
+
+
+
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+header{
+    background-color: var(--white);
+    padding: var(--main-padding);
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    align-items: center;
+}
+
+
+
+/* images */
+
+.toggle{
+    display: none;
+}
+
+.mockups{
+    position: absolute;
+    top: 0;
+    right: 0;
+    scale: 1.1;
+    transform: translate(8%,-8%);
+}
+
+.card img{
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.logos{
+    display: grid;
+    justify-content: space-between;
+}
+
+.social-media{
+    align-self: end;
+}
+
+
+
+
+/* padding and margins */
+main>*{
+    padding: var(--main-padding);
+}
+
+.advantages>*:not(:first-child){
+    margin-block-start: 2em;
+}
+
+.even-columns>*{
+    margin-block-start: 2em;
+}
+
+.grid-wrap>*{
+    margin-block-end: 2em;
+}
+
+.text-wrap-left>*{
+    margin-block-start: 2em;
+}
+
+.text-wrap-articles h2{
+    margin-block-start: 1em;
+}
+
+.articles>*:not(:first-child){
+    margin-block-start: 2em;
+}
+
+.card>*:not(:first-child){
+    margin-block-start: .5em;
+    padding: 0 2rem;
+}
+
+
+
+/* sections */
+
+.landing{
+    background-color: var(--very-light-gray);
+    display: flex;
+    gap: 5rem;
+    padding: 0 0 0 10rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.advantages{
+    background-color: var(--light-grayish-blue);
+}
+
+.text-wrap-left{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: start;
+}
+
+.grid-wrap{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    gap: 3rem;
+}
+
+.articles{
+    background: var(--very-light-gray);
+    padding-top: 2rem;
+}
+
+.card{
+    background: var(--white);
+    padding-bottom: 2rem;
+}
+
+.card>*{
+    cursor: pointer;
+}
+
+
+
+/* footer */
+
+footer{
+    background: var(--dark-blue);
+    display: flex;
+    padding: 4rem 9.5rem;
+    justify-content: space-between;
+}
+
+.left{
+    display: flex;
+    gap: 8rem;
+}
+
+footer ul{
+    display: flex;
+    gap: 1rem;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+
+
+/* buttons */
+
+.btn-green{
+    position: relative;
+    border: transparent;
+    outline-color: transparent;
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 25px;
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, var(--lime-green), var(--bright-cyan));
+    transition: .4s;
+}
+
+.btn-green:hover{
+    filter: brightness(1.1);
+    opacity: 96%;
+}
+
+
+
+@media(max-width:1150px){
+    
+    .grid-wrap{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    main>*{
+        padding: var(--1150-padding);
+    }
+
+    .landing{
+        padding: 0 0 0 6rem;
+    }
+
+    header{
+        padding: var(--1150-padding);
+    }
+
+    footer{
+        padding: 4rem 7rem;
+    }
+    
+    .left{
+        gap: 3rem;
+    }
+
+    .mockups{
+        display: none;
+    }
+
+
+}
+
+@media(max-width:850px){
+
+    header nav ul{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        justify-self: center;
+        background-color: white;
+        padding: 1rem 0;
+    }
+    
+    header nav{
+        width: 90%;
+        position: fixed;
+        left: 50%;
+        top: -23rem;
+        z-index: 1;
+        margin: 1rem 0;
+        box-shadow: 0 0 5rem 3rem rgba(51, 51, 51, 0.358);
+        transform: translate(-50%);
+        transition: .6s;
+    }
+
+    header{
+        display: flex;
+        padding: 1rem;
+    }
+
+    .btn-top-right{
+        display: none;
+    }
+
+    .toggle{
+        display: block;
+    }
+
+    footer{
+        padding: 4rem 2rem;
+    }
+
+    .left{
+        gap: 1rem;
+    }
+
+    .active{
+        transform: translate(-50%, 26rem);
+    }
+
+    .landing{
+        flex-direction: column-reverse;
+    }
+
+    .landing{
+        gap: 1rem;
+        padding: 0 0 1em 0;
+    }
+
+    .text-wrap-left>*{
+        margin-block-start: 1em;
+    }
+
+    .intro-img{
+        transform: translateX(0%);
+    }
+    
+
+}
+
+@media(max-width:650px){
+    .grid-wrap{
+        grid-template-columns: 1fr;
+    }
+    main>*{
+        padding: var(--650-padding);
+    }
+    .landing{
+        padding: var(--650-padding);
+    }
+    footer{
+        padding: 4rem 5rem;
+    }
+
+    footer{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .social-media{
+        gap: 1rem;
+    }
+
+    .left{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .right{
+        align-self: center;
+        align-items: center;
+        text-align: center;
+    }
+}
